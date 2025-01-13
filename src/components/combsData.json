@@ -1,0 +1,54 @@
+{
+    "dataStrikes": {
+        "basicStrikes": {
+            "1": "Jab",
+            "2": "Cross", 
+            "3": "Hook",
+            "4": "Uppercut",
+            "11": "Left Body Hook",
+            "12": "Right Body Hook",
+            "13": "Left Body Jab",
+            "14": "Right Body Cross"
+        },
+        "intermediateStikes": {
+            "9": "Right Elbow",
+            "10": "Left Elbow",
+            "15": "Right Knee",
+            "16": "Left Knee",
+            "17": "Right Roundhouse Kick",
+            "18": "Left Roundhouse Kick",
+            "19": "Right Front Kick",
+            "20": "Left Front Kick"
+        },
+        "advancedStrikes": {
+            "21": "Spinning Back Fist",
+            "22": "Superman Punch",
+            "23": "Flying Knee",
+            "24": "Question Mark Kick"
+        }
+    },
+    "dataDefenses": {
+        "basicDefenses": {
+            "5": "Right Duck",
+            "6": "Left Duck",
+            "25": "Right Slip",
+            "26": "Left Slip",
+            "27": "Block High",
+            "28": "Block Low"
+        },
+        "intermediateDefenses": {
+            "7": "Pivot Right",
+            "8": "Pivot Left",
+            "29": "Roll Under",
+            "30": "Step Back",
+            "31": "Check Kick",
+            "32": "Sprawl"
+        },
+        "advancedDefenses": {
+            "33": "Pull Counter",
+            "34": "Catch Kick",
+            "35": "Shoulder Roll",
+            "36": "Matrix Dodge"
+        }
+    }
+}
