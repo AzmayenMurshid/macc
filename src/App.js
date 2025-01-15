@@ -1,5 +1,6 @@
 import './App.css';
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import Combs from './components/combs/combs';
 import Stopwatch from './components/stopwatch/stopwatch';
 import { useState } from 'react';
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Analytics />
+      <SpeedInsights />
       <header className="App-header">
         <p>TRAIN SMARTER &nbsp;&nbsp;&nbsp;&nbsp; FIGHT HARDER</p>
       </header>
