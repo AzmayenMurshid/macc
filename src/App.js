@@ -1,8 +1,12 @@
 import './App.css';
-import Combs from './components/combs';
+import Combs from './components/combs/combs';
 import Stopwatch from './components/stopwatch/stopwatch';
+import { useState } from 'react';
 
 function App() {
+  const [difficulty, setDifficulty] = useState('basic');
+  const [showCombs, setShowCombs] = useState(false);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -26,10 +30,48 @@ function App() {
           <p>
             Get started below to generate your personalized striking combinations!
           </p>
-          <button
-            onClick={() => <Combs />}>Generate Combos</button>
+          <div style={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              gap: '20px', 
+              margin: '20px 0' }}>
+            <label>
+              <input 
+                type="radio" 
+                name="difficulty" 
+                value="basic"
+                checked={difficulty === 'basic'}
+                onChange={(e) => setDifficulty(e.target.value)}
+              />
+              Basic
+            </label>
+            <label>
+              <input 
+                type="radio" 
+                name="difficulty" 
+                value="intermediate"
+                checked={difficulty === 'intermediate'} 
+                onChange={(e) => setDifficulty(e.target.value)}
+              />
+              Intermediate  
+            </label>
+            <label>
+              <input 
+                type="radio" 
+                name="difficulty" 
+                value="advanced"
+                checked={difficulty === 'advanced'}
+                onChange={(e) => setDifficulty(e.target.value)}
+              />
+              Advanced
+            </label>
+          </div>
+          <button onClick={() => {
+            setShowCombs(false); // Reset first
+            setTimeout(() => setShowCombs(true), 0); // Then show new combos
+          }}>Generate Combos</button>
+          {showCombs && <Combs diff={difficulty} />}
         </div>
-        <div className='Combination-display'>Generated combinationes will go here! coming soon!</div>
         <Stopwatch />
       </div>
       <footer className='App-footer'>
