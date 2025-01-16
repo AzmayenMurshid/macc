@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# MACC - Martial Arts Combination Creator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MACC is a web application designed to help martial artists enhance their training by generating dynamic striking combinations. Whether you're a beginner learning the basics or an experienced fighter looking to add variety to your training, MACC provides customized combinations to improve your skills.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Dynamic Combination Generation**: Creates unique striking combinations based on your skill level
+- **Difficulty Levels**: Choose between Basic and Intermediate modes to match your experience
+- **Training Timer**: Built-in stopwatch to time your training sessions
+- **Clean Interface**: Simple and intuitive design for distraction-free training
+- **Progressive Learning**: Gradually increase complexity as you improve
+- **Real-time Updates**: Combinations change dynamically as you train
 
-### `npm start`
+## Benefits
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Improve technique through varied combinations
+- Develop muscle memory and flow
+- Practice realistic fighting scenarios
+- Keep training fresh and challenging
+- Enhance overall striking proficiency
+- Build better coordination and timing
+- Increase mental adaptability during fights
+- Perfect for solo or partner training
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technical Details
 
-### `npm test`
+### Basic Mode
+- Simple 2-3 strike combinations
+- Focus on fundamental techniques
+- Perfect for beginners or warm-up
+- Includes basic punches, kicks, and defensive moves
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Intermediate Mode
+- Complex 3-5 strike combinations
+- Incorporates advanced techniques
+- Suitable for experienced practitioners
+- Includes combination attacks, counters, and movement patterns
 
-### `npm run build`
+## Training Methodology
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Warm-up Phase**
+   - Start with Basic mode
+   - Focus on proper form
+   - Use the built-in timer for round management
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Main Training**
+   - Progress to your chosen difficulty level
+   - Practice each combination 5-10 times
+   - Focus on speed and power while maintaining technique
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Cool-down**
+   - Return to Basic mode
+   - Practice slower, focusing on perfect execution
+   - Use combinations for active recovery
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Visit the application at [MACC Website URL]
+2. Select your difficulty level (Basic or Intermediate)
+3. Generate combinations and start training
+4. Use the built-in stopwatch to time your sessions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Local Development
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To run this project locally:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   ```
 
-## Learn More
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
 
-### Code Splitting
+We welcome contributions from the martial arts community! Whether it's suggesting new combinations, improving the algorithm, or enhancing the user interface, please feel free to:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
 
-### Analyzing the Bundle Size
+## Safety Notice
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Always warm up properly before training
+- Start with Basic mode to understand the system
+- Listen to your body and train within your limits
+- Consult with a qualified instructor for proper technique guidance
 
-### Making a Progressive Web App
+## Future Enhancements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Advanced difficulty level
+- Custom combination creator
+- Video demonstrations
+- Training progress tracking
+- Community features
+- Mobile app version
 
-### Advanced Configuration
+## Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+For questions, suggestions, or issues, please:
+- Create an issue in the GitHub repository
+- Contact us at [support-email]
+- Join our community Discord server
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MACC is released under the MIT License. See the LICENSE file for more details.
