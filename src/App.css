@@ -78,12 +78,38 @@
   background-color: #4fa8d5;
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
+.modal-content {
+  background-color: #282c34;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(97, 218, 251, 0.3);
+  border: 1px solid #61dafb;
+}
 
 .App-footer {
   background-color: #1a1e23;
   color: white;
-  padding: 15px;
+  padding:  5px;
   text-align: center;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 }

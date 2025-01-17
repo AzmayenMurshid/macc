@@ -50,5 +50,46 @@
             "35": "Shoulder Roll",
             "36": "Matrix Dodge"
         }
+    },
+    "warmUps": {
+        "cardio": {
+            "1": "5 minutes light jogging",
+            "2": "3 sets of 1 minute jumping jacks", 
+            "3": "5 minutes skipping rope",
+            "4": "2 sets of 30 seconds high knees"
+        },
+        "mobility": {
+            "1": "2 sets of 10 arm circles each direction",
+            "2": "2 sets of 10 hip rotations each side",
+            "3": "2 sets of 10 shoulder rolls each direction", 
+            "4": "10 neck rotations each direction"
+        },
+        "dynamic": {
+            "1": "10 walking knee hugs each leg",
+            "2": "10 walking lunges each leg",
+            "3": "10 high kicks each leg", 
+            "4": "10 leg swings each leg"
+        },
+        "stretches": {
+            "1": "30 seconds butterfly stretch",
+            "2": "30 seconds hip flexor stretch each side",
+            "3": "30 seconds hamstring stretch each leg",
+            "4": "30 seconds quad stretch each leg",
+            "5": "30 seconds calf stretch each leg",
+            "6": "30 seconds shoulder and tricep stretch each arm"
+        }
+    },
+    "timerSettings": {
+        "roundDurations": {
+            "1": 120,
+            "2": 180,
+            "3": 300
+        },
+        "restPeriods": {
+            "1": 30,
+            "2": 60
+        },
+        "defaultRound": 180,
+        "defaultRest": 60
     }
 }
