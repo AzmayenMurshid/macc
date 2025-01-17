@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import combsData from './combsData.json';
+import data from '../data.json';
 import './combs.css';
 
 export default function Combs({ diff }) {
@@ -10,16 +10,16 @@ export default function Combs({ diff }) {
     useEffect(() => {
         // Parse strikes data by category
         const strikesByCategory = {
-            basic: combsData.dataStrikes.basicStrikes,
-            intermediate: combsData.dataStrikes.intermediateStikes,
-            advanced: combsData.dataStrikes.advancedStrikes
+            basic: data.dataStrikes.basicStrikes,
+            intermediate: data.dataStrikes.intermediateStikes,
+            advanced: data.dataStrikes.advancedStrikes
         };
 
         // Parse defenses data by category
         const defensesByCategory = {
-            basic: combsData.dataDefenses.basicDefenses,
-            intermediate: combsData.dataDefenses.intermediateDefenses,
-            advanced: combsData.dataDefenses.advancedDefenses
+            basic: data.dataDefenses.basicDefenses,
+            intermediate: data.dataDefenses.intermediateDefenses,
+            advanced: data.dataDefenses.advancedDefenses
         };
 
         // Get current difficulty strikes and defenses
