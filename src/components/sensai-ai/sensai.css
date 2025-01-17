@@ -22,6 +22,7 @@
   border-radius: 20px;
   max-width: 70%;
   position: relative;
+  width: fit-content; /* Added to fit text size */
 }
 
 .message.user {
