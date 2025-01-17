@@ -91,5 +91,32 @@
         },
         "defaultRound": 180,
         "defaultRest": 60
+    },
+    
+    "introSteps": [
+    {
+      "title": "Welcome to Sensei.ai!",
+      "content": "Your personal martial arts training companion. Let's get you started with a quick tour."
+    },
+    {
+      "title": "Warm-up First",
+      "content": "Always start with our guided warm-up routine to prevent injuries and prepare your body."
+    },
+    {
+      "title": "Choose Your Level",
+      "content": "Select your difficulty level - Basic, Intermediate, or Advanced - to get combinations that match your skill."
+    },
+    {
+      "title": "Dynamic Combinations",
+      "content": "Get fresh, challenging combinations tailored to your level. Generate new ones anytime!"
+    },
+    {
+      "title": "Time Your Training",
+      "content": "Use our professional timer or stopwatch to structure your training sessions effectively."
+    },
+    {
+      "title": " Talk to Sensei AI",
+      "content": "Ask me anything about martial arts, training, or fitness. I'm here to help!"
     }
+  ]
 }

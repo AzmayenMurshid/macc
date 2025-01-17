@@ -1,0 +1,146 @@
+.chat-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 60vh; /* Reduced from 80vh */
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #1a1e23;
+}
+
+.message {
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 70%;
+  position: relative;
+}
+
+.message.user {
+  background-color: #282c34;
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 5px;
+}
+
+.message.ai {
+  background-color: #1a1e23;
+  color: #61dafb;
+  margin-right: auto;
+  border-bottom-left-radius: 5px;
+}
+
+.typing-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.typing-dots span {
+  width: 8px;
+  height: 8px;
+  background-color: #61dafb;
+  border-radius: 50%;
+  display: inline-block;
+  animation: float 1s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px; /* Reduced from 10px */
+  border: none;
+  border-radius: 4px;
+  background-color: #1a1e23;
+  color: white;
+}
+
+.chat-input input::placeholder {
+  color: #888;
+}
+
+.chat-input button {
+  padding: 8px 20px; /* Reduced vertical padding from 10px */
+  border: none;
+  border-radius: 4px;
+  background-color: #61dafb;
+  color: #282c34;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.chat-input button:hover {
+  background-color: #4fa8d1;
+}
+
+.chat-input button::before {
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  animation: dot1 1s infinite;
+}
+
+.chat-input button::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation: dot2 1s infinite;
+}
+
+@keyframes dot1 {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-15px);
+    opacity: 1;
+  }
+}
+
+@keyframes dot2 {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
