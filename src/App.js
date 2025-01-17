@@ -6,7 +6,7 @@ import Combs from './components/combs/combs';
 import Stopwatch from './components/stopwatch/stopwatch';
 import Timer from './components/timer/timer';
 import Sensai from './components/sensai-ai/sensai';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 // TODO: add training distinction type between speed, power, and form
 
