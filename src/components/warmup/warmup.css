@@ -1,0 +1,65 @@
+.stretches-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+}
+
+.stretch-section {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #61dafb;
+    border-radius: 8px;
+    background-color: rgba(97, 218, 251, 0.1);
+}
+
+.stretch-section h3 {
+    color: #61dafb;
+    margin-bottom: 15px;
+}
+
+.stretch-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.stretch-section li {
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: rgba(97, 218, 251, 0.05);
+}
+
+.stretch-note {
+    font-style: italic;
+    color: #61dafb;
+    margin: 20px 0;
+    padding: 10px;
+    border-left: 3px solid #61dafb;
+}
+
+.skip-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.skip-section button {
+    background-color: #61dafb;
+    color: #282c34;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.skip-section button:hover {
+    background-color: #4fa8d5;
+}
+
+.skip-section button:disabled {
+    background-color: #2c3e50;
+    color: #95a5a6;
+    cursor: not-allowed;
+}
