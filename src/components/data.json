@@ -91,6 +91,7 @@
         },
         "defaultRound": 180,
         "defaultRest": 60
+
     },
     
     "introSteps": [
@@ -119,4 +120,7 @@
       "content": "Ask me anything about martial arts, training, or fitness. I'm here to help!"
     }
   ]
+
+    }
+
 }
