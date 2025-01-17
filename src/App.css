@@ -163,6 +163,16 @@ button:active {
     transform: translate(-50%, 0);
     opacity: 1;
   }
+
+.modal-content {
+  background-color: #282c34;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(97, 218, 251, 0.3);
+  border: 1px solid #61dafb;
 }
 
 .App-footer {

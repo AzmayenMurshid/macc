@@ -1,22 +1,30 @@
-.stretches-container {
+.stretches-contai
     max-width: 600px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 
     color: white;
 }
 
-.stretch-section {
+.stretch-secti
     margin: 15px 0;
     padding: 12px;
     border: 1px solid #61dafb;
-    border-radius: 6px;
+    border-radius: 
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #61dafb;
+    border-radius: 
     background-color: rgba(97, 218, 251, 0.1);
 }
 
 .stretch-section h3 {
-    color: #61dafb;
+    color: #61da
     margin-bottom: 12px;
-    font-size: 1.1em;
+    font-size: 1.1
+    margin-bottom: 15
 }
 
 .stretch-section ul {
@@ -24,26 +32,34 @@
     padding: 0;
 }
 
-.stretch-section li {
+.stretch-section li
     margin: 8px 0;
     padding: 6px;
     border-radius: 4px;
     background-color: rgba(97, 218, 251, 0.05);
-    font-size: 0.9em;
+    font-size: 0.9e
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: rgba(97, 218, 251, 0.05
 }
 
 .stretch-note {
     font-style: italic;
-    color: #61dafb;
+    color: #61dafb
     margin: 15px 0;
     padding: 8px;
     border-left: 3px solid #61dafb;
-    font-size: 0.9em;
+    font-size: 0.9em
+    margin: 20px 0;
+    padding: 10px;
+    border-left: 3px solid #61dafb
 }
 
 .skip-section {
     text-align: center;
     margin-top: 20px;
+    margin-top: 30px;
 }
 
 .skip-section button {
@@ -56,6 +72,11 @@
     font-weight: bold;
     transition: background-color 0.3s;
     font-size: 0.9em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .skip-section button:hover {

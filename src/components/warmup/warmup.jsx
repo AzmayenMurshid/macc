@@ -4,7 +4,11 @@ import './warmup.css';
 const COUNTDOWN_SECONDS = 1;
 
 export default function Warmup({ onComplete }) {
-    const [showStretches, setShowStretches] = useState(false);
+  const [showStretches, setShowStretches] = useState(false);
+  const COUNTDOWN_SECONDS = 30;
+
+export default function Warmup({ onComplete }) {
+    const [showStretches, setShowStretches] = useState(true);
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
     const [countdown, setCountdown] = useState(COUNTDOWN_SECONDS);
     const warmupData = require('../data.json').warmUps;
@@ -21,6 +25,20 @@ export default function Warmup({ onComplete }) {
 
         return () => clearInterval(timer);
     }, [countdown, isButtonDisabled]);
+    const handleComplete = () => {
+        setShowStretches(false);
+        onComplete();
+    };
+
+    if (!showStretches) {
+        return (
+            <div className="stretches-container">
+                <h2>Warm Up Complete</h2>
+                <p>Stay safe and make sure you're properly warmed up!</p>
+                <button onClick={handleComplete}>Continue to Combinations</button>
+            </div>
+        );
+    }
 
     return (
         <div className="stretches-container">
@@ -79,6 +97,7 @@ export default function Warmup({ onComplete }) {
             <div className="skip-section">
                 <button 
                     onClick={onComplete}
+                    onClick={() => setShowStretches(false)}
                     disabled={isButtonDisabled}
                 >
                     {isButtonDisabled ? `Please review warm-up ${countdown}s` : 'Complete'}
