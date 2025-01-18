@@ -29,6 +29,7 @@
   color: white;
   margin-left: auto;
   border-bottom-right-radius: 5px;
+  width: fit-content;
 }
 
 .message.ai {
