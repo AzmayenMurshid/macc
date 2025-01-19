@@ -15,6 +15,23 @@ const Sensai = () => {
     dangerouslyAllowBrowser: true
   });
 
+  const formatResponse = (text) => {
+    // Format lists
+    text = text.replace(/^\d+\.\s/gm, '• ');
+    text = text.replace(/^\-\s/gm, '• ');
+    
+    // Format headers/sections based on number of asterisks
+    text = text.replace(/\*\*\*\*([^*]+)\*\*\*\*/g, '<strong>$1</strong>');
+    text = text.replace(/\*\*\*([^*]+)\*\*\*/g, '<strong>$1</strong>');
+    text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    text = text.replace(/\*([^*]+)\*/g, '<strong>$1</strong>');
+    
+    // Add line breaks for readability
+    text = text.replace(/\n/g, '<br/>');
+    
+    return text;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -34,7 +51,7 @@ const Sensai = () => {
         messages: [
           {
             role: "system",
-            content: "You are Sensai, a martial arts and fitness instructor focused on providing personalized training guidance and mentorship. Respond with clear, concise martial arts and fitness advice and maintain a respectful, friendly tone."
+            content: "You are Sensai, a martial arts and fitness instructor focused on providing personalized training guidance and mentorship. Respond with clear, concise martial arts and fitness advice and maintain a respectful, friendly tone. Use bullet points and sections to organize information."
           },
           ...messages,
           userMessage
@@ -43,9 +60,10 @@ const Sensai = () => {
         max_tokens: 500
       });
 
+      const formattedContent = formatResponse(response.choices[0].message.content);
       const assistantMessage = {
         role: 'assistant',
-        content: response.choices[0].message.content
+        content: formattedContent
       };
 
       setMessages(prev => [...prev, assistantMessage]);
@@ -62,17 +80,14 @@ const Sensai = () => {
 
   return (
     <div className="sensai-container">
-      <h2 style={{
-        color: '#61dafb',
-        textAlign: 'center',
-        marginBottom: '20px',
-        fontFamily: '"Poppins", serif'
-      }}>Chat with Sensai</h2>
+      <strong className='sensai-header'>Chat with Sensai</strong>
       <div className="chat-messages">
         {messages.map((message, index) => (
-          <div key={index} className={`message ${message.role}`}>
-            {message.content}
-          </div>
+          <div 
+            key={index} 
+            className={`message ${message.role}`}
+            dangerouslySetInnerHTML={{ __html: message.content }}
+          />
         ))}
         {isLoading && (
           <div className="loading">
