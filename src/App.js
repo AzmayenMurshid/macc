@@ -5,6 +5,7 @@ import Warmup from './components/warmup/warmup';
 import Combs from './components/combs/combs';
 import Stopwatch from './components/stopwatch/stopwatch';
 import Timer from './components/timer/timer';
+import IntroSteps from './components/introsteps/introsteps';
 import { useState } from 'react';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   const [combKey, setCombKey] = useState(0); // Add key to force re-render
   const [showTimer, setShowTimer] = useState(true);
   const [showTimerSection, setShowTimerSection] = useState(false);
+  const [showChat, setShowChat] = useState(false);
 
   const handleGenerateClick = () => {
     setShowStretches(true);
@@ -36,33 +38,20 @@ function App() {
     setShowTimer(!showTimer);
   };
 
+  const toggleChat = () => {
+    setShowChat(!showChat);
+  };
+
   return (
     <div className="App">
       <Analytics />
       <SpeedInsights />
+      <IntroSteps onComplete={handleStretchesComplete} setHasStarted={setHasStarted} />
       <header className="App-header">
         <p>TRAIN SMARTER &nbsp;&nbsp;&nbsp;&nbsp; FIGHT HARDER</p>
       </header>
       <div className="App-body">
         <div>
-          <h2>Welcome to Sensei.ai &nbsp;&nbsp;|&nbsp;&nbsp; Your Complete Martial Arts Training Companion</h2>
-          <p>
-            Sensei.ai is your all-in-one martial arts training platform designed to elevate 
-            your skills to the next level. From guided warm-ups to dynamic combinations 
-            and timed training sessions, SenseiAI provides everything you need for an 
-            effective training session. Whether you're a beginner or an advanced 
-            practitioner, SenseiAI offers:
-          </p>
-          <ul>
-            <li>Structured warm-up routines to prevent injury</li>
-            <li>Dynamic combat combinations for all skill levels</li>
-            <li>Professional round timer for interval training</li>
-            <li>Progressive difficulty system to match your growth</li>
-          </ul>
-          <p>
-            Start your training session below with a proper warm-up, followed by 
-            customized combinations and timed rounds!
-          </p>
           {hasStarted && (
             <div style={{ 
                 display: 'flex', 
@@ -101,9 +90,7 @@ function App() {
               </label>
             </div>
           )}
-          {!hasStarted ? (
-            <button onClick={handleGenerateClick}>Begin Training</button>
-          ) : (
+          {hasStarted && (
             <button onClick={handleGetCombos}>Generate New Combinations</button>
           )}
           {showStretches && (
@@ -130,9 +117,31 @@ function App() {
           </div>
         )}
       </div>
+      <button 
+        onClick={toggleChat}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          width: '60px',
+          height: '60px',
+          borderRadius: '50%',
+          backgroundColor: '#1890ff',
+          color: 'white',
+          border: 'none',
+          cursor: 'pointer',
+          boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '24px'
+        }}
+      >
+        💬
+      </button>
       <footer className='App-footer'>
         created by Azmayen Murshid
-      <p>Version 1.0.2</p>
+        <p>Version 1.0.2</p>
       </footer>
     </div>
   );
