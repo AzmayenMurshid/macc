@@ -1,5 +1,5 @@
 import './App.css';
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import Warmup from './components/warmup/warmup';
 import Combs from './components/combs/combs';
