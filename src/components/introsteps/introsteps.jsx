@@ -6,6 +6,7 @@ import data from '../data.json';
 const IntroSteps = ({ onComplete, setHasStarted }) => {
   const [current, setCurrent] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [showWarmup, setShowWarmup] = useState(false);
 
   const steps = data.introSteps.map(step => ({
     title: step.title,
@@ -18,15 +19,21 @@ const IntroSteps = ({ onComplete, setHasStarted }) => {
 
   const handleDone = () => {
     setIsVisible(false);
+    setShowWarmup(true);
     if (setHasStarted) setHasStarted(true);
-    if (onComplete) onComplete();
   };
 
   const handleSkip = () => {
-    setIsVisible(false);
-    setHasStarted(true);
-    if (onComplete) onComplete();
+    setIsVisible(false); 
+    setShowWarmup(true);
+    if (setHasStarted) setHasStarted(true);
   };
+
+  useEffect(() => {
+    if (showWarmup && onComplete) {
+      onComplete();
+    }
+  }, [showWarmup, onComplete]);
 
   if (!isVisible) return null;
 

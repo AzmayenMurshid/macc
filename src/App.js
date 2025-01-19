@@ -49,7 +49,7 @@ function App() {
       {!showChat ? (
         <div className="App-body">
           {!hasSeenIntro && <IntroSteps onComplete={() => {
-            handleStretchesComplete();
+            setShowStretches(true);
             setHasSeenIntro(true);
           }} setHasStarted={setHasStarted} />}
           <div>

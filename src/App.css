@@ -6,6 +6,21 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a3a #1f2123;
+}
+
+.App::-webkit-scrollbar {
+  width: 8px;
+}
+
+.App::-webkit-scrollbar-track {
+  background: #1f2123;
+}
+
+.App::-webkit-scrollbar-thumb {
+  background-color: #3a3a3a;
+  border-radius: 4px;
 }
 
 .App-header {
@@ -40,6 +55,21 @@
   font-family: "Poppins", serif;
   font-weight: 300;
   font-style: normal;
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a3a #1f2123;
+}
+
+.App-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.App-body::-webkit-scrollbar-track {
+  background: #1f2123;
+}
+
+.App-body::-webkit-scrollbar-thumb {
+  background-color: #3a3a3a;
+  border-radius: 4px;
 }
 
 .App-body h2 {
@@ -99,7 +129,21 @@
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 0 20px rgba(97, 218, 251, 0.3);
-  border: 1px solid #61dafb;
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a3a #1f2123;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #1f2123;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #3a3a3a;
+  border-radius: 4px;
 }
 
 .App-footer {
