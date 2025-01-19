@@ -35,13 +35,35 @@
 
 .chat-messages {
   flex: 1;
-  overflow-y: auto;
-  padding: 20px;
+  overflow-y: scroll;
+  padding: 20px 20px 20px 10px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a3a #1f2123;
+}
+
+.sensai-header {
+  color: #61dafb;
+  text-align: center;
+  margin: 20px;
+  font-family: 'Poppins', serif;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #1f2123;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #3a3a3a;
+  border-radius: 4px;
 }
 
 .message {
