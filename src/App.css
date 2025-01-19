@@ -11,7 +11,7 @@
 .App-header {
   position: fixed;
   background-color: #1a1e23;
-  min-height: 7vh; /* Reduced from 10vh to 7vh */
+  min-height: 7vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,11 +105,44 @@
 .App-footer {
   background-color: #1a1e23;
   color: white;
-  padding:  5px;
+  padding: 5px;
   text-align: center;
   font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
+}
+
+/* Timer section styles */
+.timer-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: rgba(26, 30, 35, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Radio button styles */
+input[type="radio"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+label {
+  margin-right: 15px;
+  cursor: pointer;
+  color: #a1a3a6;
+  transition: color 0.3s;
+}
+
+label:hover {
+  color: #61dafb;
+}
+
+/* Version text style */
+.App-footer p {
+  color: #61dafb;
+  font-size: 12px;
+  margin: 0;
 }
