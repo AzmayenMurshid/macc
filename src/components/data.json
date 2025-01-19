@@ -91,5 +91,27 @@
         },
         "defaultRound": 180,
         "defaultRest": 60
-    }
+    },
+    "introSteps": [
+        {
+          "title": "Welcome to Sensei.ai",
+          "content": "Your personal martial arts training companion. Let's get you started!"
+        },
+        {
+          "title": "Warm Up First",
+          "content": "Begin with guided stretches and warm-up exercises to prevent injury and prepare your body."
+        },
+        {
+          "title": "Generate Combinations",
+          "content": "Get personalized striking combinations based on your skill level."
+        },
+        {
+          "title": "Track Your Progress",
+          "content": "Use the built-in timer and stopwatch to measure your training sessions."
+        },
+        {
+            "title": "Talk to Sensei",
+            "content": "Sensei is an AI training partner designed to provide personalized one-on-one martial arts guidance, consultation, and mentorship to help you reach your full potential."
+        }
+      ]
 }
