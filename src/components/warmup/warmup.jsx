@@ -32,7 +32,7 @@ export default function Warmup({ onComplete }) {
             <div className="stretches-container">
                 <h2>Warm Up Complete</h2>
                 <p>Stay safe and make sure you're properly warmed up!</p>
-                <button onClick={handleComplete}>Continue to Combinations</button>
+                <button onClick={handleComplete}>Continue to training</button>
             </div>
         );
     }
