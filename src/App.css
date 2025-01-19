@@ -146,3 +146,13 @@ label:hover {
   font-size: 12px;
   margin: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .chat-toggle-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    position: fixed;
+  }
+}
