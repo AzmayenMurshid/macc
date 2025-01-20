@@ -40,7 +40,7 @@ const ProgressTracker = ({ totalRounds }) => {
     const strokeDashoffset = circumference - (progress / 100) * circumference;
 
     return (
-        <div className="progress-tracker" style={{ textAlign: 'center' }}>
+        <div className="progress-tracker" style={{ textAlign: 'center', marginBottom: '1rem', marginTop: '1rem' }}>
             <div style={{ position: 'relative', width: '140px', height: '140px', margin: '0 auto' }}>
                 <svg width="140" height="140" style={{ transform: 'rotate(-90deg)' }}>
                     <circle
@@ -48,7 +48,7 @@ const ProgressTracker = ({ totalRounds }) => {
                         cy="70"
                         r={radius}
                         stroke="#2d2d2d"
-                        strokeWidth="10"
+                        strokeWidth="15"
                         fill="none"
                     />
                     <circle
@@ -56,7 +56,7 @@ const ProgressTracker = ({ totalRounds }) => {
                         cy="70"
                         r={radius}
                         stroke="#61dafb"
-                        strokeWidth="10"
+                        strokeWidth="15"
                         fill="none"
                         strokeLinecap="round"
                         strokeDasharray={circumference}
@@ -75,7 +75,7 @@ const ProgressTracker = ({ totalRounds }) => {
                     {completedRounds}/{totalRounds}
                 </div>
             </div>
-            <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '1rem' }}>
+            <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '2rem' }}>
                 <button 
                     onClick={handleRoundComplete}
                     disabled={completedRounds >= totalRounds}
