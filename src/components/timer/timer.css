@@ -94,8 +94,46 @@
     border-radius: 8px;
 }
 
-.timer span[style*="color: #4CAF50"] {
+.timer-rest {
+    animation: glowGreen 1.5s ease-in-out infinite alternate;
     background-color: rgba(76, 175, 80, 0.15);
     border: 2px solid #4CAF50;
     box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
+    display: inline-block;
+    padding: 10px;
+}
+
+.timer-train {
+    animation: glowRed 1.5s ease-in-out infinite alternate;
+    background-color: rgba(255, 77, 77, 0.15);
+    border: 2px solid #ff4d4d;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.3);
+    display: inline-block;
+    padding: 10px;
+}
+
+@keyframes glowGreen {
+    from {
+        box-shadow: 0 0 5px #4CAF50,
+                    0 0 10px #4CAF50,
+                    0 0 15px #4CAF50;
+    }
+    to {
+        box-shadow: 0 0 10px #4CAF50,
+                    0 0 20px #4CAF50,
+                    0 0 30px #4CAF50;
+    }
+}
+
+@keyframes glowRed {
+    from {
+        box-shadow: 0 0 5px #ff4d4d,
+                    0 0 10px #ff4d4d,
+                    0 0 15px #ff4d4d;
+    }
+    to {
+        box-shadow: 0 0 10px #ff4d4d,
+                    0 0 20px #ff4d4d,
+                    0 0 30px #ff4d4d;
+    }
 }
