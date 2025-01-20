@@ -1,118 +1,497 @@
 {
     "dataStrikes": {
         "basicStrikes": {
-            "1": "Jab",
-            "2": "Cross", 
-            "3": "Hook",
-            "4": "Uppercut",
-            "11": "Left Body Hook",
-            "12": "Right Body Hook",
-            "13": "Left Body Jab",
-            "14": "Right Body Cross"
+            "1": {
+                "name": "Jab",
+                "description": "A quick, straight punch with your lead hand",
+                "form": "Rotate your lead shoulder forward, extend arm straight, turn fist over at impact, snap back quickly",
+                "powerRating": 3,
+                "powerDescription": "Low power (3/10) but very fast - meant to set up stronger strikes",
+                "speedRating": 9,
+                "speedDescription": "Extremely fast (9/10) - should be your quickest punch",
+                "precisionRating": 8,
+                "precisionDescription": "High accuracy required (8/10) - aims for opponent's centerline",
+                "commonMistakes": [
+                    "Dropping guard hand",
+                    "Telegraphing by pulling back first", 
+                    "Not turning fist over",
+                    "Overextending"
+                ]
+            },
+            "2": {
+                "name": "Cross",
+                "description": "A powerful straight punch with your rear hand",
+                "form": "Rotate hips and shoulders, drive from back foot, extend arm straight while turning fist",
+                "powerRating": 8,
+                "powerDescription": "Very powerful (8/10) - one of your strongest punches",
+                "speedRating": 6,
+                "speedDescription": "Moderate speed (6/10) - slower than jab but faster than hook",
+                "precisionRating": 7,
+                "precisionDescription": "Good accuracy needed (7/10) - targets chin or solar plexus",
+                "commonMistakes": [
+                    "Not rotating hips",
+                    "Lifting rear heel too early",
+                    "Dropping lead hand",
+                    "Leaning forward too much"
+                ]
+            },
+            "3": {
+                "name": "Hook",
+                "description": "A horizontal arcing punch, typically with lead hand",
+                "form": "Bend elbow 90 degrees, rotate hips and pivot lead foot, keep fist parallel to ground",
+                "powerRating": 7,
+                "powerDescription": "Strong power (7/10) - especially effective to the body or jaw",
+                "speedRating": 5,
+                "speedDescription": "Medium speed (5/10) - requires good timing",
+                "precisionRating": 6,
+                "precisionDescription": "Moderate accuracy (6/10) - wider target area than straight punches",
+                "commonMistakes": [
+                    "Swinging too wide",
+                    "Not pivoting foot",
+                    "Dropping elbow",
+                    "Winding up before punch"
+                ]
+            },
+            "4": {
+                "name": "Uppercut",
+                "description": "Vertical rising punch targeting chin/body",
+                "form": "Bend knees slightly, drive upward from legs, rotate palm facing you",
+                "powerRating": 8,
+                "powerDescription": "Very powerful (8/10) - especially when timed with opponent moving down",
+                "speedRating": 5,
+                "speedDescription": "Medium speed (5/10) - requires close range",
+                "precisionRating": 8,
+                "precisionDescription": "High precision needed (8/10) - small target area",
+                "commonMistakes": [
+                    "Starting too far back",
+                    "Not using legs",
+                    "Swinging instead of driving up",
+                    "Dropping guard"
+                ]
+            }
         },
         "intermediateStikes": {
-            "9": "Right Elbow",
-            "10": "Left Elbow",
-            "15": "Right Knee",
-            "16": "Left Knee",
-            "17": "Right Roundhouse Kick",
-            "18": "Left Roundhouse Kick",
-            "19": "Right Front Kick",
-            "20": "Left Front Kick"
+            "9": {
+                "name": "Right Elbow",
+                "description": "Close-range strike using elbow point",
+                "form": "Step in close, rotate hips sharply, protect face with lead hand",
+                "powerRating": 9,
+                "powerDescription": "Extremely powerful (9/10) - one of the most damaging strikes",
+                "speedRating": 7,
+                "speedDescription": "Quick at close range (7/10) - slower to set up",
+                "precisionRating": 6,
+                "precisionDescription": "Moderate precision (6/10) - effective in clinch range",
+                "commonMistakes": [
+                    "Striking from too far",
+                    "Not protecting face",
+                    "Poor hip rotation",
+                    "Telegraphing movement"
+                ]
+            },
+            "10": {
+                "name": "Left Elbow",
+                "description": "Close-range strike using lead elbow",
+                "form": "Step in close, rotate hips, keep right hand high for protection",
+                "powerRating": 8,
+                "powerDescription": "Very powerful (8/10) - devastating at close range",
+                "speedRating": 8,
+                "speedDescription": "Fast strike (8/10) - quicker than right elbow",
+                "precisionRating": 6,
+                "precisionDescription": "Moderate precision (6/10) - effective in clinch",
+                "commonMistakes": [
+                    "Dropping guard",
+                    "Poor hip rotation", 
+                    "Striking from too far",
+                    "Not stepping in enough"
+                ]
+            },
+            "11": {
+                "name": "Push Kick",
+                "description": "Front kick using ball of foot to create distance",
+                "form": "Chamber knee high, extend leg straight, push through ball of foot",
+                "powerRating": 6,
+                "powerDescription": "Medium power (6/10) - meant to push not damage",
+                "speedRating": 7,
+                "speedDescription": "Good speed (7/10) - can catch advancing opponent",
+                "precisionRating": 7,
+                "precisionDescription": "Precise targeting needed (7/10) - aim for hip/solar plexus",
+                "commonMistakes": [
+                    "Not chambering knee",
+                    "Leaning back too far",
+                    "Poor balance on standing leg",
+                    "Kicking with toes instead of ball of foot"
+                ]
+            },
+            "12": {
+                "name": "Switch Kick",
+                "description": "Roundhouse kick after switching stance",
+                "form": "Quick hop to switch stance, rotate hip, strike with shin",
+                "powerRating": 8,
+                "powerDescription": "High power (8/10) - momentum from switch adds force",
+                "speedRating": 6,
+                "speedDescription": "Medium speed (6/10) - switch telegraphs kick",
+                "precisionRating": 7,
+                "precisionDescription": "Good accuracy needed (7/10) - moving target",
+                "commonMistakes": [
+                    "Slow/obvious switch",
+                    "Not rotating hip fully",
+                    "Poor balance after switch",
+                    "Kicking with foot instead of shin"
+                ]
+            }
         },
         "advancedStrikes": {
-            "21": "Spinning Back Fist",
-            "22": "Superman Punch",
-            "23": "Flying Knee",
-            "24": "Question Mark Kick"
+            "21": {
+                "name": "Spinning Back Fist",
+                "description": "Rotational strike using back of fist",
+                "form": "Look over shoulder, spin on ball of foot, whip arm with controlled power",
+                "powerRating": 7,
+                "powerDescription": "High power (7/10) - uses rotational force",
+                "speedRating": 6,
+                "speedDescription": "Deceptive speed (6/10) - slow to start but fast impact",
+                "precisionRating": 9,
+                "precisionDescription": "Very difficult to land (9/10) - requires excellent timing",
+                "commonMistakes": [
+                    "Losing sight of target",
+                    "Spinning too slowly",
+                    "Poor balance",
+                    "Telegraphing spin"
+                ]
+            },
+            "22": {
+                "name": "Spinning Hook Kick",
+                "description": "Powerful spinning kick targeting head level",
+                "form": "Pivot on lead foot, chamber knee, rotate hips fully, strike with heel",
+                "powerRating": 9,
+                "powerDescription": "Devastating power (9/10) - full body rotation generates force",
+                "speedRating": 5,
+                "speedDescription": "Slower execution (5/10) - requires setup or timing",
+                "precisionRating": 9,
+                "precisionDescription": "Extremely precise (9/10) - small target area at range",
+                "commonMistakes": [
+                    "Not looking over shoulder",
+                    "Incomplete hip rotation",
+                    "Poor distance management",
+                    "Dropping hands during spin"
+                ]
+            },
+            "23": {
+                "name": "Flying Knee",
+                "description": "Jumping knee strike with forward momentum",
+                "form": "Push off back leg, drive knee up and forward, use arms for balance",
+                "powerRating": 9,
+                "powerDescription": "Maximum impact (9/10) - combines jump and knee force",
+                "speedRating": 6,
+                "speedDescription": "Moderate speed (6/10) - jump creates slight delay",
+                "precisionRating": 8,
+                "precisionDescription": "High precision needed (8/10) - airborne targeting",
+                "commonMistakes": [
+                    "Jumping too high",
+                    "Poor timing on approach",
+                    "Not protecting face",
+                    "Landing off balance"
+                ]
+            },
+            "24": {
+                "name": "Axe Kick",
+                "description": "Vertical downward strike with heel",
+                "form": "Chamber knee high, extend leg up, strike down with heel",
+                "powerRating": 8,
+                "powerDescription": "Strong impact (8/10) - gravity assists force",
+                "speedRating": 5,
+                "speedDescription": "Slower technique (5/10) - telegraphed movement",
+                "precisionRating": 7,
+                "precisionDescription": "Good accuracy required (7/10) - vertical line target",
+                "commonMistakes": [
+                    "Insufficient flexibility",
+                    "Poor chamber height",
+                    "Losing balance",
+                    "Weak heel strike"
+                ]
+            }
         }
     },
     "dataDefenses": {
         "basicDefenses": {
-            "5": "Right Duck",
-            "6": "Left Duck",
-            "25": "Right Slip",
-            "26": "Left Slip",
-            "27": "Block High",
-            "28": "Block Low"
+            "5": {
+                "name": "Right Duck",
+                "description": "Lowering head/body to avoid high strikes",
+                "form": "Bend knees, keep hands up, maintain sight of opponent",
+                "speedRating": 8,
+                "speedDescription": "Must be very quick (8/10) - faster than incoming strike",
+                "recoveryRating": 7,
+                "recoveryDescription": "Fast recovery needed (7/10) - ready to counter",
+                "commonMistakes": [
+                    "Bending at waist instead of knees",
+                    "Dropping hands",
+                    "Looking at ground",
+                    "Duck too early/late"
+                ]
+            },
+            "6": {
+                "name": "Slip Left",
+                "description": "Waist movement to evade straight punches",
+                "form": "Slight bend at waist, rotate upper body left, keep eyes on opponent",
+                "speedRating": 8,
+                "speedDescription": "Quick reaction required (8/10) - must beat incoming strike",
+                "recoveryRating": 8,
+                "recoveryDescription": "Fast recovery essential (8/10) - ready to counter or defend",
+                "commonMistakes": [
+                    "Leaning too far",
+                    "Dropping guard",
+                    "Taking eyes off opponent",
+                    "Poor timing"
+                ]
+            },
+            "7": {
+                "name": "Block High",
+                "description": "Basic high guard block against strikes",
+                "form": "Elbows tight, hands protecting face, chin tucked",
+                "speedRating": 6,
+                "speedDescription": "Moderate speed needed (6/10) - anticipate strikes",
+                "recoveryRating": 9,
+                "recoveryDescription": "Very quick recovery (9/10) - must counter immediately",
+                "commonMistakes": [
+                    "Elbows too wide",
+                    "Chin up",
+                    "Blocking too late",
+                    "Flinching/closing eyes"
+                ]
+            },
+            "8": {
+                "name": "Parry",
+                "description": "Deflecting incoming strikes with palm",
+                "form": "Small redirecting movement, keep elbow close, stay balanced",
+                "speedRating": 9,
+                "speedDescription": "High speed required (9/10) - precise timing crucial",
+                "recoveryRating": 8,
+                "recoveryDescription": "Quick recovery needed (8/10) - follow with counter",
+                "commonMistakes": [
+                    "Moving arm too far",
+                    "Pushing instead of deflecting",
+                    "Poor timing",
+                    "Off balance after parry"
+                ]
+            }
         },
         "intermediateDefenses": {
-            "7": "Pivot Right",
-            "8": "Pivot Left",
-            "29": "Roll Under",
-            "30": "Step Back",
-            "31": "Check Kick",
-            "32": "Sprawl"
+            "1": {
+                "name": "Pull Counter",
+                "description": "Defensive pull back with immediate counter strike",
+                "form": "Quick upper body pull back, maintain base, counter with straight punch",
+                "speedRating": 8,
+                "speedDescription": "Fast reaction speed (8/10) - timing is critical",
+                "recoveryRating": 7,
+                "recoveryDescription": "Good recovery needed (7/10) - must maintain balance",
+                "commonMistakes": [
+                    "Pulling back too far",
+                    "Poor weight distribution",
+                    "Counter too slow",
+                    "Telegraphing movement"
+                ]
+            },
+            "2": {
+                "name": "Rolling Slip",
+                "description": "Continuous slipping motion under hooks",
+                "form": "Bend knees, rotate torso, maintain guard position while moving",
+                "speedRating": 7,
+                "speedDescription": "Good speed required (7/10) - fluid movement essential",
+                "recoveryRating": 8,
+                "recoveryDescription": "Quick recovery crucial (8/10) - ready for follow-ups",
+                "commonMistakes": [
+                    "Rolling too low",
+                    "Losing sight of opponent",
+                    "Poor timing",
+                    "Crossing feet"
+                ]
+            },
+            "3": {
+                "name": "Catch and Pivot",
+                "description": "Catching strikes while pivoting to create angles",
+                "form": "Catch with palm, pivot on lead foot, rotate body to new angle",
+                "speedRating": 8,
+                "speedDescription": "High speed needed (8/10) - timing crucial for catch",
+                "recoveryRating": 7,
+                "recoveryDescription": "Good recovery required (7/10) - maintain balance through pivot",
+                "commonMistakes": [
+                    "Catching with fingers spread",
+                    "Pivoting too far",
+                    "Poor timing on catch",
+                    "Dropping guard on pivot"
+                ]
+            },
+            "4": {
+                "name": "Duck and Weave",
+                "description": "Combined ducking and lateral movement under strikes",
+                "form": "Bend knees, move head off centerline while stepping laterally",
+                "speedRating": 8,
+                "speedDescription": "Fast execution needed (8/10) - fluid movement essential",
+                "recoveryRating": 8,
+                "recoveryDescription": "Quick recovery crucial (8/10) - maintain defensive position",
+                "commonMistakes": [
+                    "Ducking too low",
+                    "Moving straight back",
+                    "Looking at ground",
+                    "Poor weight distribution"
+                ]
+            },
+            "5": {
+                "name": "Shell Defense",
+                "description": "Tight guard position with subtle upper body movement",
+                "form": "Elbows tight, chin tucked, slight rotation to deflect strikes",
+                "speedRating": 6,
+                "speedDescription": "Moderate speed required (6/10) - focus on positioning",
+                "recoveryRating": 7,
+                "recoveryDescription": "Good recovery needed (7/10) - maintain defensive structure",
+                "commonMistakes": [
+                    "Elbows too wide",
+                    "Standing too square",
+                    "Chin up",
+                    "Tense shoulders"
+                ]
+            }
         },
         "advancedDefenses": {
-            "33": "Pull Counter",
-            "34": "Catch Kick",
-            "35": "Shoulder Roll",
-            "36": "Matrix Dodge"
+            "1": {
+                "name": "Shoulder Roll",
+                "description": "Advanced defensive technique using shoulder to deflect",
+                "form": "Rotate upper body, raise lead shoulder, tuck chin, maintain base",
+                "speedRating": 9,
+                "speedDescription": "Very fast execution (9/10) - precise timing required",
+                "recoveryRating": 9,
+                "recoveryDescription": "Excellent recovery needed (9/10) - immediate counter opportunity",
+                "commonMistakes": [
+                    "Incorrect shoulder angle",
+                    "Standing too square",
+                    "Poor weight transfer",
+                    "Late rotation"
+                ]
+            },
+            "2": {
+                "name": "Pendulum Step",
+                "description": "Advanced footwork to create angles while defending",
+                "form": "Quick step at 45 degree angle, shift weight, maintain balance",
+                "speedRating": 8,
+                "speedDescription": "High speed needed (8/10) - catch opponent off-guard",
+                "recoveryRating": 8,
+                "recoveryDescription": "Fast recovery essential (8/10) - maintain position",
+                "commonMistakes": [
+                    "Crossing feet",
+                    "Poor angle selection",
+                    "Loss of balance",
+                    "Telegraph movement"
+                ]
+            }
         }
     },
     "warmUps": {
         "cardio": {
-            "1": "5 minutes light jogging",
-            "2": "3 sets of 1 minute jumping jacks", 
-            "3": "5 minutes skipping rope",
-            "4": "2 sets of 30 seconds high knees"
-        },
-        "mobility": {
-            "1": "2 sets of 10 arm circles each direction",
-            "2": "2 sets of 10 hip rotations each side",
-            "3": "2 sets of 10 shoulder rolls each direction", 
-            "4": "10 neck rotations each direction"
-        },
-        "dynamic": {
-            "1": "10 walking knee hugs each leg",
-            "2": "10 walking lunges each leg",
-            "3": "10 high kicks each leg", 
-            "4": "10 leg swings each leg"
-        },
-        "stretches": {
-            "1": "30 seconds butterfly stretch",
-            "2": "30 seconds hip flexor stretch each side",
-            "3": "30 seconds hamstring stretch each leg",
-            "4": "30 seconds quad stretch each leg",
-            "5": "30 seconds calf stretch each leg",
-            "6": "30 seconds shoulder and tricep stretch each arm"
+            "1": {
+                "name": "Light Jogging",
+                "description": "5 minutes at conversational pace",
+                "intensityRating": 4,
+                "intensityDescription": "Low intensity (4/10) - should be able to hold conversation",
+                "form": "Keep upright posture, relaxed shoulders, breathe steadily",
+                "commonMistakes": [
+                    "Starting too fast",
+                    "Hunched posture",
+                    "Irregular breathing",
+                    "Heel striking"
+                ]
+            }
         }
+    ,
+    "stretches": {
+        "1": {
+            "name": "Arm Circles",
+            "description": "30 seconds forward, 30 seconds backward",
+            "intensityRating": 3,
+            "intensityDescription": "Low intensity (3/10) - gentle shoulder warm up",
+            "form": "Stand tall, arms straight out, make controlled circular motions",
+            "commonMistakes": [
+                "Moving too fast",
+                "Uneven circles",
+                "Hunched shoulders",
+                "Limited range of motion"
+            ]
+        },
+        "2": {
+            "name": "Hip Rotations",
+            "description": "10 rotations each direction",
+            "intensityRating": 3,
+            "intensityDescription": "Low intensity (3/10) - focuses on mobility",
+            "form": "Feet shoulder width, hands on hips, make smooth circular motions",
+            "commonMistakes": [
+                "Moving too quickly",
+                "Poor posture",
+                "Limited rotation range",
+                "Uneven movements"
+            ]
+        }
+    },
+    "dynamic": {
+        "1": {
+            "name": "High Knees",
+            "description": "30 seconds alternating legs",
+            "intensityRating": 6,
+            "intensityDescription": "Moderate intensity (6/10) - builds to higher heart rate",
+            "form": "Drive knees up to waist height, pump arms naturally",
+            "commonMistakes": [
+                "Leaning back",
+                "Knees too low",
+                "Landing heavy",
+                "Irregular rhythm"
+            ]
+        },
+        "2": {
+            "name": "Jumping Jacks",
+            "description": "1 minute continuous movement",
+            "intensityRating": 5,
+            "intensityDescription": "Moderate intensity (5/10) - full body warm up",
+            "form": "Coordinated arm and leg movements, soft landings",
+            "commonMistakes": [
+                "Arms not fully extended",
+                "Feet too close/wide",
+                "Stiff movements",
+                "Poor timing"
+            ]
+        }
+    }
     },
     "timerSettings": {
         "roundDurations": {
-            "1": 120,
-            "2": 180,
-            "3": 300
+            "beginner": 120,
+            "intermediate": 180,
+            "advanced": 300
         },
         "restPeriods": {
-            "1": 10,
-            "2": 30,
-            "3": 60
+            "short": 10,
+            "medium": 30,
+            "long": 60
         },
         "defaultRound": 180,
         "defaultRest": 60
     },
     "introSteps": [
         {
-          "title": "Welcome to Sensai",
-          "content": "Your personal martial arts training companion. Let's get you started!"
+            "title": "Welcome to Sensai",
+            "content": "Your personal martial arts training companion. Let's get you started!"
         },
         {
-          "title": "Warm Up First",
-          "content": "Begin with guided stretches and warm-up exercises to prevent injury and prepare your body."
+            "title": "Warm Up First",
+            "content": "Begin with guided stretches and warm-up exercises to prevent injury and prepare your body."
         },
         {
-          "title": "Generate Combinations",
-          "content": "Get personalized striking combinations based on your skill level."
+            "title": "Generate Combinations",
+            "content": "Get personalized striking combinations based on your skill level."
         },
         {
-          "title": "Track Your Progress",
-          "content": "Use the built-in automated tracker and clocks to measure your training sessions."
+            "title": "Track Your Progress",
+            "content": "Use the built-in automated tracker and clocks to measure your training sessions."
         },
         {
             "title": "Talk to Sensai",
             "content": "Sensai is an AI training partner designed to provide personalized one-on-one martial arts guidance, consultation, and mentorship to help you reach your full potential."
         }
-      ]
+    ]
 }
