@@ -39,11 +39,11 @@ const IntroSteps = ({ onComplete, setHasStarted }) => {
 
   return (
     <div className="intro-steps-overlay">
-      <div className="intro-steps-container">
-        <Steps  current={current} items={steps} />
+      <div className="intro-steps-container" style={{width: '70%', maxWidth: '400px', padding: '1.5rem'}}>
+        <Steps current={current} items={steps} size="small" />
         <div className="steps-content">
-          <h3>{steps[current].title}</h3>
-          <p>{steps[current].content}</p>
+          <h3 style={{fontSize: '1.4rem'}}>{steps[current].title}</h3>
+          <p style={{fontSize: '1rem'}}>{steps[current].content}</p>
         </div>
         <div className="steps-action">
           <button onClick={handleSkip}>Skip Tutorial</button>
