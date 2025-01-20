@@ -86,8 +86,9 @@
             "3": 300
         },
         "restPeriods": {
-            "1": 30,
-            "2": 60
+            "1": 10,
+            "2": 30,
+            "3": 60
         },
         "defaultRound": 180,
         "defaultRest": 60
@@ -107,7 +108,7 @@
         },
         {
           "title": "Track Your Progress",
-          "content": "Use the built-in timer and stopwatch to measure your training sessions."
+          "content": "Use the built-in automated tracker and clocks to measure your training sessions."
         },
         {
             "title": "Talk to Sensai",

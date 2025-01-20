@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './warmup.css';
 
-const COUNTDOWN_SECONDS = 30;
+const COUNTDOWN_SECONDS = 1;
 
 export default function Warmup({ onComplete }) {
     const [showStretches, setShowStretches] = useState(true);

@@ -12,6 +12,7 @@ export default function Timer() {
     const [isCustomRound, setIsCustomRound] = useState(false);
     const [customTimeInput, setCustomTimeInput] = useState('');
     const [showInput, setShowInput] = useState(false);
+    const [showStatus, setShowStatus] = useState(false);
 
     useEffect(() => {
         let intervalId;
@@ -20,6 +21,10 @@ export default function Timer() {
                 setTimeLeft(prevTime => {
                     if (prevTime <= 1) {
                         if (!isRest) {
+                            // Dispatch timerComplete event when round timer hits 0
+                            const event = new Event('timerComplete');
+                            window.dispatchEvent(event);
+                            
                             setIsRest(true);
                             return restDuration;
                         } else {
@@ -50,6 +55,7 @@ export default function Timer() {
             setIsRest(false);
         }
         setIsRunning(!isRunning);
+        setShowStatus(true);
     };
 
     const reset = () => {
@@ -57,6 +63,7 @@ export default function Timer() {
         setTimeLeft(0);
         setIsRest(false);
         setCustomTimeInput('');
+        setShowStatus(false);
     };
 
     const handleRoundTimeChange = (event) => {
@@ -139,10 +146,14 @@ export default function Timer() {
 
     return (
         <div>
+            {showStatus && (
+                <h3 className={`status-text ${isRest ? "timer-rest" : "timer-train"}`}>
+                    {isRest ? 'REST' : 'TRAIN'}
+                </h3>
+            )}
             <div>
                 {showInput ? (
                     <input
-
                         type="text"
                         placeholder="MM:SS"
                         value={customTimeInput}

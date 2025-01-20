@@ -7,7 +7,8 @@ import Stopwatch from './components/stopwatch/stopwatch';
 import Timer from './components/timer/timer';
 import IntroSteps from './components/introsteps/introsteps';
 import Sensai from './components/sensai/sensai';
-import { useState } from 'react';
+import ProgressTracker from './components/progtrack/progtrack';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [difficulty, setDifficulty] = useState('basic');
@@ -19,6 +20,18 @@ function App() {
   const [showTimer, setShowTimer] = useState(true);
   const [showTimerSection, setShowTimerSection] = useState(false);
   const [showChat, setShowChat] = useState(false);
+  const [targetRounds, setTargetRounds] = useState('10');
+
+  useEffect(() => {
+    const handleTimerComplete = () => {
+      // Dispatch timerComplete event when timer hits 00:00
+      const event = new Event('timerComplete');
+      window.dispatchEvent(event);
+    };
+
+    window.addEventListener('timerZero', handleTimerComplete);
+    return () => window.removeEventListener('timerZero', handleTimerComplete);
+  }, []);
 
   const handleStretchesComplete = () => {
     setShowStretches(false);
@@ -38,6 +51,15 @@ function App() {
     setShowChat(!showChat);
   };
 
+  const handleRoundsChange = (e) => {
+    const value = e.target.value.replace(/[^0-9]/g, '');
+    if (value === '' || parseInt(value) < 1) {
+      setTargetRounds('');
+    } else {
+      setTargetRounds(parseInt(value));
+    }
+  };
+
   return (
     <div className="App">
       <Analytics />
@@ -54,42 +76,70 @@ function App() {
           }} setHasStarted={setHasStarted} />}
           <div>
             {hasStarted && (
-              <div style={{ 
-                  display: 'flex', 
-                  justifyContent: 'center', 
-                  gap: '20px', 
-                  margin: '20px 0' }}>
-                <label>
-                  <input 
-                    type="radio" 
-                    name="difficulty" 
-                    value="basic"
-                    checked={difficulty === 'basic'}
-                    onChange={(e) => setDifficulty(e.target.value)}
-                  />
-                  Basic
-                </label>
-                <label>
-                  <input 
-                    type="radio" 
-                    name="difficulty" 
-                    value="intermediate"
-                    checked={difficulty === 'intermediate'} 
-                    onChange={(e) => setDifficulty(e.target.value)}
-                  />
-                  Intermediate  
-                </label>
-                <label>
-                  <input 
-                    type="radio" 
-                    name="difficulty" 
-                    value="advanced"
-                    checked={difficulty === 'advanced'}
-                    onChange={(e) => setDifficulty(e.target.value)}
-                  />
-                  Advanced
-                </label>
-              </div>
+              <>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '10px',
+                  marginBottom: '20px'
+                }}>
+                  <label style={{ color: '#f5f5f5' }}>
+                    Target Rounds:
+                    <input
+                      type="text"
+                      value={targetRounds}
+                      onChange={handleRoundsChange}
+                      style={{
+                        marginLeft: '10px',
+                        padding: '5px',
+                        width: '60px',
+                        backgroundColor: '#2d2d2d',
+                        color: '#f5f5f5',
+                        border: '1px solid #61dafb',
+                        borderRadius: '4px'
+                      }}
+                    />
+                  </label>
+                  <ProgressTracker totalRounds={targetRounds} />
+                </div>
+                <div style={{ 
+                    display: 'flex', 
+                    justifyContent: 'center', 
+                    gap: '20px', 
+                    margin: '20px 0' }}>
+                  <label>
+                    <input 
+                      type="radio" 
+                      name="difficulty" 
+                      value="basic"
+                      checked={difficulty === 'basic'}
+                      onChange={(e) => setDifficulty(e.target.value)}
+                    />
+                    Basic
+                  </label>
+                  <label>
+                    <input 
+                      type="radio" 
+                      name="difficulty" 
+                      value="intermediate"
+                      checked={difficulty === 'intermediate'} 
+                      onChange={(e) => setDifficulty(e.target.value)}
+                    />
+                    Intermediate  
+                  </label>
+                  <label>
+                    <input 
+                      type="radio" 
+                      name="difficulty" 
+                      value="advanced"
+                      checked={difficulty === 'advanced'}
+                      onChange={(e) => setDifficulty(e.target.value)}
+                    />
+                    Advanced
+                  </label>
+                </div>
+              </>
             )}
             {hasStarted && (
               <button onClick={handleGetCombos}>Generate New Combinations</button>
@@ -130,7 +180,7 @@ function App() {
       <button 
         onClick={toggleChat}
         className="chat-toggle-button"
-      >
+        style={{ zIndex: 1000 }}>
         {showChat ? '✕' : '💬'}
       </button>
     </div>
