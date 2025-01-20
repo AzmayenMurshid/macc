@@ -120,7 +120,7 @@ function App() {
                   </label>
                   <label>
                     <input 
-                      type="radio" 
+                      type="radio"
                       name="difficulty" 
                       value="intermediate"
                       checked={difficulty === 'intermediate'} 
