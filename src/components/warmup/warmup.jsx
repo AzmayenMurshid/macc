@@ -38,9 +38,9 @@ export default function Warmup({ onComplete }) {
 
     if (!showStretches) {
         return (
-            <div className="stretches-container">
-                <h2>Warm Up Complete</h2>
-                <p>Stay safe and make sure you're properly warmed up!</p>
+            <div className="stretches-container" style={{maxWidth: '300px', margin: '0 auto', padding: '15px'}}>
+                <h3>Warm Up Complete</h3>
+                <p style={{fontSize: '14px'}}>Stay safe and make sure you're properly warmed up!</p>
                 <button onClick={handleComplete}>Continue to training</button>
             </div>
         );
@@ -52,8 +52,8 @@ export default function Warmup({ onComplete }) {
                 style={{
                     height: '4px',
                     background: '#61dafb',
-                    width: `${(countdown / COUNTDOWN_SECONDS) * 100}%`,
-                    transition: 'width 1s linear',
+                    width: `${(currentPage / 3) * 100}%`,
+                    transition: 'width 0.3s ease-in-out',
                     marginTop: '-20px',
                     marginBottom: '20px'
                 }}
