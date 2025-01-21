@@ -46,13 +46,6 @@ export default function Stopwatch() {
 
   return (
     <div>
-      <h3 style={{ 
-        color: isTraining ? '#4CAF50' : '#ff0000',
-        textAlign: 'center',
-        marginBottom: '10px'
-      }}>
-        {isTraining ? 'TRAIN' : 'REST'}
-      </h3>
       <div className='stopwatch'>
         <span><b>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}</b></span>
         <span><b>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}</b></span>

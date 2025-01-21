@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+    import React, { useState, useEffect } from 'react';
+import './progtrack.css';
 
-const ProgressTracker = ({ totalRounds }) => {
+const ProgressTracker = ({ totalRounds, onRoundComplete, onRoundDecrement, onReset }) => {
     const [completedRounds, setCompletedRounds] = useState(0);
     const [progress, setProgress] = useState(0);
+    const [showNote, setShowNote] = useState(true);
 
     useEffect(() => {
         const progressPercentage = (completedRounds / totalRounds) * 100;
@@ -13,7 +15,7 @@ const ProgressTracker = ({ totalRounds }) => {
         // Listen for timer completion event
         const handleTimerComplete = () => {
             if (completedRounds < totalRounds) {
-                setCompletedRounds(completedRounds + 1);
+                handleRoundComplete();
             }
         };
 
@@ -27,12 +29,27 @@ const ProgressTracker = ({ totalRounds }) => {
     const handleRoundComplete = () => {
         if (completedRounds < totalRounds) {
             setCompletedRounds(completedRounds + 1);
+            if (onRoundComplete) {
+                onRoundComplete(completedRounds + 1);
+            }
         }
     };
 
     const handleReset = () => {
         setCompletedRounds(0);
         setProgress(0);
+        if (onReset) {
+            onReset();
+        }
+    };
+
+    const handleDecrement = () => {
+        if (completedRounds > 0) {
+            setCompletedRounds(completedRounds - 1);
+            if (onRoundDecrement) {
+                onRoundDecrement(completedRounds - 1);
+            }
+        }
     };
 
     const radius = 60;
@@ -40,72 +57,71 @@ const ProgressTracker = ({ totalRounds }) => {
     const strokeDashoffset = circumference - (progress / 100) * circumference;
 
     return (
-        <div className="progress-tracker" style={{ textAlign: 'center', marginBottom: '1rem', marginTop: '1rem' }}>
-            <div style={{ position: 'relative', width: '140px', height: '140px', margin: '0 auto' }}>
-                <svg width="140" height="140" style={{ transform: 'rotate(-90deg)' }}>
+        <div className="progress-tracker">
+            <div className={`progress-container`}>
+                {showNote && (
+                    <div className="progress-note">
+                        <button 
+                            onClick={() => setShowNote(false)}
+                            className="note-close-btn"
+                        >
+                            ×
+                        </button>
+                        <p>
+                           Rounds update automatically with timer or manually using controls.<br /> 
+                        </p>
+                        <p style={{ fontSize: '11px', color: 'crimson' }}>Close to access tracker.</p>
+                    </div>
+                )}
+                <div className={`progress-circle-container ${showNote ? 'blurred' : ''}`}>
+                    <button
+                        onClick={handleDecrement}
+                        className={`decrement-btn ${showNote ? 'disabled' : ''}`}
+                        disabled={completedRounds === 0 || showNote}>
+                        -
+                    </button>
+                    <svg width="140" height="140" className="progress-circle">
                     <circle
                         cx="70"
                         cy="70"
                         r={radius}
                         stroke="#2d2d2d"
-                        strokeWidth="15"
+                        strokeWidth="17"
                         fill="none"
+                        className="progress-circle-bg"
                     />
                     <circle
                         cx="70"
                         cy="70"
                         r={radius}
-                        stroke="#61dafb"
-                        strokeWidth="15"
+                        stroke="#17e6b5"
+                        strokeWidth="17"
                         fill="none"
                         strokeLinecap="round"
                         strokeDasharray={circumference}
                         strokeDashoffset={strokeDashoffset}
-                        style={{ transition: 'stroke-dashoffset 0.5s ease-in-out' }}
+                        className="progress-circle-fill"
                     />
-                </svg>
-                <div style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    fontSize: '1.5rem',
-                    color: '#fff'
-                }}>
-                    {completedRounds}/{totalRounds}
+                    </svg>
+                    <div className="progress-text">
+                        {completedRounds}/{totalRounds}
+                    </div>
                 </div>
+
             </div>
-            <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '2rem' }}>
+            <div className={`progress-controls ${showNote ? 'blurred' : ''}`}>
                 <button 
                     onClick={handleRoundComplete}
-                    disabled={completedRounds >= totalRounds}
-                    style={{
-                        padding: '0.75rem 1rem',
-                        backgroundColor: completedRounds >= totalRounds ? '#4a4a4a' : '#61dafb',
-                        color: '#fff',
-                        border: 'none',
-                        borderRadius: '10px',
-                        cursor: completedRounds >= totalRounds ? 'not-allowed' : 'pointer'
-                    }}
+                    disabled={completedRounds >= totalRounds || showNote}
+                    className={`complete-round-btn ${completedRounds >= totalRounds || showNote ? 'disabled' : ''}`}
                 >
                     {completedRounds >= totalRounds ? (
-                        <span style={{color: '#98FB98', fontWeight: 'bold'}}>Rounds Complete!</span>
+                        <span className="complete-text">Rounds Complete!</span>
                     ) : 'Complete Round'}
                 </button>
                 <button
                     onClick={handleReset}
-                    style={{
-                        padding: '0.75rem',
-                        backgroundColor: 'transparent',
-                        color: '#fff',
-                        border: 'none',
-                        borderRadius: '10px',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}
-                >
+                    className="reset-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path d="M21 12a9 9 0 0 0-9-9M3 12a9 9 0 0 1 9-9" strokeWidth="2" strokeLinecap="round"/>
                         <path d="M21 12a9 9 0 0 1-9 9" strokeWidth="2" strokeLinecap="round"/>

@@ -13,7 +13,7 @@
                 "precisionDescription": "High accuracy required (8/10) - aims for opponent's centerline",
                 "commonMistakes": [
                     "Dropping guard hand",
-                    "Telegraphing by pulling back first", 
+                    "Telegraphing by pulling back first",
                     "Not turning fist over",
                     "Overextending"
                 ]
@@ -94,13 +94,13 @@
                 "form": "Step in close, rotate hips, keep right hand high for protection",
                 "powerRating": 8,
                 "powerDescription": "Very powerful (8/10) - devastating at close range",
-                "speedRating": 8,
+                "speedRating": 8, 
                 "speedDescription": "Fast strike (8/10) - quicker than right elbow",
                 "precisionRating": 6,
                 "precisionDescription": "Moderate precision (6/10) - effective in clinch",
                 "commonMistakes": [
                     "Dropping guard",
-                    "Poor hip rotation", 
+                    "Poor hip rotation",
                     "Striking from too far",
                     "Not stepping in enough"
                 ]
@@ -478,7 +478,7 @@
             "content": "Your personal martial arts training companion. Let's get you started!"
         },
         {
-            "title": "Warm Up First",
+            "title": "Warm Up First", 
             "content": "Begin with guided stretches and warm-up exercises to prevent injury and prepare your body."
         },
         {

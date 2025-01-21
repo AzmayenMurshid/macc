@@ -163,14 +163,13 @@ export default function Timer() {
                         className="timer"
                         style={{
                             backgroundColor: '#282c34',
-                            border: '1px solid #61dafb',
-                            borderRadius: '5px',
-                            padding: '5px',
-                            width: '200px',
-                            minHeight: '50px',
-                            fontSize: '20px',
+                            borderRadius: '20px',
+                            padding: '10px',
+                            minWidth: '170px',
+                            minHeight: '60px',
+                            fontSize: '30px',
                             textAlign: 'center',
-                            color: 'white' }}
+                            color: 'rgb(216, 86, 86)' }}
                         maxLength="5"
                         autoFocus
                     />
@@ -186,7 +185,7 @@ export default function Timer() {
                                 }
                             }
                         }}
-                        style={{color: isRest ? '#4CAF50' : 'rgb(154, 154, 187)'}}
+                        style={{ fontSize: '30px', color: isRest ? '#4CAF50' : 'rgb(216, 86, 86)'}}
                     >
                         {formatTime(timeLeft)}
                     </span>
