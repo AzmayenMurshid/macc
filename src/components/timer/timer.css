@@ -22,13 +22,15 @@
     border: none;
     outline: none;
     margin-bottom: 100px;
-    color: rgb(154, 154, 187);
+    color: rgb(216, 86, 86);
     background: transparent;
     padding: 5px 10px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     box-shadow: none;
+    font-family: 'Share Tech', monospace;
+    font-size: 30px;
 }
 
 .timer input:focus {
@@ -50,7 +52,7 @@
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
-    background-color: #3d5afe;
+    background-color: #474b62;
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -96,7 +98,9 @@
 
 .timer-rest {
     animation: glowGreen 1.5s ease-in-out infinite alternate;
+    width: 100px;
     background-color: rgba(76, 175, 80, 0.15);
+    border-radius: 10px;
     border: 2px solid #4CAF50;
     box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
     display: inline-block;
@@ -105,7 +109,9 @@
 
 .timer-train {
     animation: glowRed 1.5s ease-in-out infinite alternate;
+    width: 100px;
     background-color: rgba(255, 77, 77, 0.15);
+    border-radius: 10px;
     border: 2px solid #ff4d4d;
     box-shadow: 0 0 15px rgba(255, 77, 77, 0.3);
     display: inline-block;
@@ -114,26 +120,26 @@
 
 @keyframes glowGreen {
     from {
-        box-shadow: 0 0 5px #4CAF50,
-                    0 0 10px #4CAF50,
-                    0 0 15px #4CAF50;
+        box-shadow: 0 0 2px #4CAF50,
+                    0 0 5px #4CAF50,
+                    0 0 10px #4CAF50;
     }
     to {
         box-shadow: 0 0 10px #4CAF50,
-                    0 0 20px #4CAF50,
-                    0 0 30px #4CAF50;
+                    0 0 15px #4CAF50,
+                    0 0 10px #4CAF50;
     }
 }
 
 @keyframes glowRed {
     from {
-        box-shadow: 0 0 5px #ff4d4d,
-                    0 0 10px #ff4d4d,
-                    0 0 15px #ff4d4d;
+        box-shadow: 0 0 2px #ff4d4d,
+                    0 0 5px #ff4d4d,
+                    0 0 10px #ff4d4d;
     }
     to {
         box-shadow: 0 0 10px #ff4d4d,
-                    0 0 20px #ff4d4d,
-                    0 0 30px #ff4d4d;
+                    0 0 15px #ff4d4d,
+                    0 0 20px #ff4d4d;
     }
 }

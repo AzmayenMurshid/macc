@@ -80,7 +80,15 @@ const Sensai = () => {
 
   return (
     <div className="sensai-container">
-      <strong className='sensai-header'>Chat with Sensai</strong>
+      <div className="sensai-header">
+        <div className="sensai-avatar">
+          <p className="avatar-img">AI</p>
+        </div>
+        <div className="sensai-info">
+          <strong className="sensai-title">Sensai</strong>
+          <p className="sensai-subtitle">Your Personal Martial Arts & Fitness Guide</p>
+        </div>
+      </div>
       <div className="chat-messages">
         {messages.map((message, index) => (
           <div 

@@ -41,7 +41,7 @@ export default function Warmup({ onComplete }) {
             <div className="stretches-container" style={{maxWidth: '300px', margin: '0 auto', padding: '15px'}}>
                 <h3>Warm Up Complete</h3>
                 <p style={{fontSize: '14px'}}>Stay safe and make sure you're properly warmed up!</p>
-                <button onClick={handleComplete}>Continue to training</button>
+                <button className="nav-btn" onClick={handleComplete}>Continue to training</button>
             </div>
         );
     }
@@ -51,7 +51,7 @@ export default function Warmup({ onComplete }) {
             <div 
                 style={{
                     height: '4px',
-                    background: '#61dafb',
+                    background: '#10a37f',
                     width: `${(currentPage / 3) * 100}%`,
                     transition: 'width 0.3s ease-in-out',
                     marginTop: '-20px',
@@ -74,7 +74,7 @@ export default function Warmup({ onComplete }) {
                                     <p>{exercise.description}</p>
                                     <p>Form: {exercise.form}</p>
                                     <p>Common mistakes to avoid:</p>
-                                    <ul>
+                                    <ul className="common-mistakes">
                                         {exercise.commonMistakes.map((mistake, i) => (
                                             <li key={i}>{mistake}</li>
                                         ))}
@@ -95,7 +95,7 @@ export default function Warmup({ onComplete }) {
                                     <p>{exercise.description}</p>
                                     <p>Form: {exercise.form}</p>
                                     <p>Common mistakes to avoid:</p>
-                                    <ul>
+                                    <ul className="common-mistakes">
                                         {exercise.commonMistakes.map((mistake, i) => (
                                             <li key={i}>{mistake}</li>
                                         ))}
@@ -116,7 +116,7 @@ export default function Warmup({ onComplete }) {
                                     <p>{exercise.description}</p>
                                     <p>Form: {exercise.form}</p>
                                     <p>Common mistakes to avoid:</p>
-                                    <ul>
+                                    <ul className="common-mistakes">
                                         {exercise.commonMistakes.map((mistake, i) => (
                                             <li key={i}>{mistake}</li>
                                         ))}
@@ -134,19 +134,36 @@ export default function Warmup({ onComplete }) {
 
             <div className="navigation-buttons" style={{ display: 'flex', justifyContent: currentPage === 3 ? 'center' : 'space-between', gap: '10px' }}>
                 {currentPage > 1 && currentPage < 3 && (
-                    <button onClick={prevPage}>←</button>
+                    <button className="nav-btn" onClick={prevPage}>←</button>
                 )}
                 {currentPage < 3 && (
-                    <button onClick={nextPage}>→</button>
+                    <button className="nav-btn" onClick={nextPage}>→</button>
                 )}
                 {currentPage === 3 && (
                     <button 
+                        className="nav-btn"
                         onClick={() => setShowStretches(false)}
                         disabled={isButtonDisabled}
                     >
                         {isButtonDisabled ? `Please review warm-up ${countdown}s` : 'Complete Warm Up'}
                     </button>
                 )}
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                <button 
+                    onClick={handleComplete}
+                    style={{
+                        padding: '5px 10px',
+                        fontSize: '0.8em',
+                        backgroundColor: 'transparent',
+                        color: '#10a37f',
+                        borderRadius: '4px',
+                        cursor: 'pointer'
+                    }}
+                >
+                    Skip Warm Up
+                </button>
             </div>
         </div>
     );

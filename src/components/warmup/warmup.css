@@ -1,4 +1,5 @@
 .stretches-container {
+    background-color: #1e1e21;
     max-width: 700px;
     margin: 0 auto;
     padding: 2rem;
@@ -7,69 +8,70 @@
     scrollbar-width: thin;
     scrollbar-color: #3a3a3a #1f2123;
 }
-
 .stretches-container::-webkit-scrollbar {
     width: 8px;
 }
-
 .stretches-container::-webkit-scrollbar-track {
     background: #1f2123;
 }
-
 .stretches-container::-webkit-scrollbar-thumb {
     background-color: #3a3a3a;
     border-radius: 4px;
 }
-
 .stretch-section {
-    margin: 1.5rem 0;
-    padding: 1.25rem;
+    margin: 1rem 0;
+    padding: 1rem;
     background-color: rgba(255, 255, 255, 0.03);
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
 .stretch-section h3 {
-    color: #61dafb;
+    color: #61dafb99;
     font-size: 1.2rem;
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     letter-spacing: 0.5px;
 }
-
 .stretch-section ul {
     list-style-type: none;
+    background-color: rgba(36, 42, 47, 0.05);
+    border-radius: 5px;
     padding: 0;
 }
-
 .stretch-section li {
-    margin: 0.75rem 0;
-    padding: 0.75rem 1rem;
-    background-color: rgba(255, 255, 255, 0.02);
-    border-radius: 6px;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
     font-size: 0.95rem;
-    line-height: 1.4;
+    line-height: 1.2;
 }
-
+.common-mistakes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.common-mistakes li {
+    font-style: italic;
+    background-color: rgba(98, 30, 30, 0.5);
+    color: #a1a3a6;
+}
 .stretch-note {
     font-style: italic;
     color: #a1a3a6;
-    margin: 1.5rem 0;
-    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    padding: 0.5rem 0.75rem;
     border-left: 2px solid #61dafb;
     font-size: 0.9rem;
 }
-
 .skip-section {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
-.skip-section button {
-    background-color: transparent;
+.nav-btn {
+    background-color: #10a37f;
     color: #61dafb;
-    border: 1px solid #61dafb;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 6px;
     cursor: pointer;
     font-size: 0.9rem;
@@ -77,14 +79,52 @@
     transition: all 0.2s ease;
 }
 
+.skip-section button {
+    background-color: transparent;
+    color: #61dafb;
+    border: 1px solid #61dafb;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
 .skip-section button:hover {
     background-color: rgba(97, 218, 251, 0.1);
     transform: translateY(-1px);
 }
 
-.skip-section button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    border-color: #4a4a4a;
-    color: #4a4a4a;
+@media screen and (max-width: 480px) {
+    .stretches-container {
+        width: 90%;
+        padding: 0.75rem;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+
+    .stretch-section {
+        padding: 0.75rem;
+        margin: 0.75rem 0;
+    }
+
+    .stretch-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .stretch-section li {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .stretch-note {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .nav-btn,
+    .skip-section button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
 }

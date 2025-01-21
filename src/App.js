@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [difficulty, setDifficulty] = useState('basic');
+  const [trainingFocus, setTrainingFocus] = useState('power');
   const [showCombs, setShowCombs] = useState(false);
   const [showStretches, setShowStretches] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
@@ -90,15 +91,7 @@ function App() {
                       type="text"
                       value={targetRounds}
                       onChange={handleRoundsChange}
-                      style={{
-                        marginLeft: '10px',
-                        padding: '5px',
-                        width: '60px',
-                        backgroundColor: '#2d2d2d',
-                        color: '#f5f5f5',
-                        border: '1px solid #61dafb',
-                        borderRadius: '4px'
-                      }}
+                      className="target-rounds-input"
                     />
                   </label>
                   <ProgressTracker totalRounds={targetRounds} />
@@ -108,41 +101,43 @@ function App() {
                     justifyContent: 'center', 
                     gap: '20px', 
                     margin: '20px 0' }}>
-                  <label>
-                    <input 
-                      type="radio" 
-                      name="difficulty" 
-                      value="basic"
-                      checked={difficulty === 'basic'}
-                      onChange={(e) => setDifficulty(e.target.value)}
-                    />
-                    Basic
-                  </label>
-                  <label>
-                    <input 
-                      type="radio"
-                      name="difficulty" 
-                      value="intermediate"
-                      checked={difficulty === 'intermediate'} 
-                      onChange={(e) => setDifficulty(e.target.value)}
-                    />
-                    Intermediate  
-                  </label>
-                  <label>
-                    <input 
-                      type="radio" 
-                      name="difficulty" 
-                      value="advanced"
-                      checked={difficulty === 'advanced'}
-                      onChange={(e) => setDifficulty(e.target.value)}
-                    />
-                    Advanced
-                  </label>
+                  <select
+                    value={difficulty}
+                    onChange={(e) => setDifficulty(e.target.value)}
+                    style={{
+                      padding: '8px',
+                      backgroundColor: '#2d2d2d',
+                      color: '#f5f5f5',
+                      borderRadius: '4px',
+                      cursor: 'pointer'
+                    }}>
+                    <option value="basic">Basic</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                  </select>
+                  <select
+                    value={trainingFocus}
+                    onChange={(e) => setTrainingFocus(e.target.value)}
+                    disabled
+                    style={{
+                      padding: '8px',
+                      backgroundColor: '#2d2d2d',
+                      color: '#f5f5f5',
+                      borderRadius: '4px',
+                      cursor: 'not-allowed',
+                      opacity: 0.6
+                    }}>
+                    <option value="power">Training Focus (Coming Soon)</option>
+                    <option value="power">Power</option>
+                    <option value="speed">Speed</option>
+                    <option value="endurance">Endurance</option>
+                    <option value="form">Form</option>
+                  </select>
                 </div>
               </>
             )}
             {hasStarted && (
-              <button onClick={handleGetCombos}>Generate New Combinations</button>
+              <button className="homeBtn" onClick={handleGetCombos}>Generate New Combinations</button>
             )}
             {showStretches && (
               <div className="modal-overlay">
@@ -160,8 +155,8 @@ function App() {
                 fontSize: '24px',
                 fontWeight: 'bold',
                 color: '#a1a3a6'
-                 }}>Training Clock</h2>
-              <button onClick={toggleTimer}>
+                 }}>Round Clock</h2>
+              <button className="homeBtn" onClick={toggleTimer}>
                 {showTimer ? 'Switch to Stopwatch' : 'Switch to Timer'}
               </button>
               {showTimer ? <Timer /> : <Stopwatch />}
